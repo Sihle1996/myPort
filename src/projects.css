@@ -1,0 +1,33 @@
+/* Ensure to target the correct SVG elements within the GitHub calendar */
+.react-github-calendar .react-activity-calendar__block--level-0 {
+    /* Light purple (few contributions) */
+    fill: #c4b5fd;
+  }
+  
+  .react-github-calendar .react-activity-calendar__block--level-1 {
+    /* Mid purple */
+    fill: #7c3aed;
+  }
+  
+  .react-github-calendar .react-activity-calendar__block--level-2 {
+    /* Darker purple */
+    fill: #5b21b6;
+  }
+  
+  .react-github-calendar .react-activity-calendar__block--level-3 {
+    /* Darkest purple (most contributions) */
+    fill: #780d51;
+  }
+  
+  .react-github-calendar .react-activity-calendar__block--level-4 {
+    /* Base color for no contributions */
+    fill: #161b22;
+  }
+  
+  /* Customize the text color for the entire calendar */
+  .react-github-calendar text {
+    fill: #ffffff;
+  }
+
+  
+  

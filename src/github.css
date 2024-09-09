@@ -1,0 +1,43 @@
+.github-calendar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f2937; /* Background color of the calendar section */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .github-calendar h2 {
+    margin-bottom: 20px;
+    color: #ffffff; /* Text color */
+    text-align: center;
+  }
+  
+  .react-github-calendar {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+
+  .react-github-calendar .color-scale-0 {
+    fill: #161b22; /* No contributions */
+  }
+  
+  .react-github-calendar .color-scale-1 {
+    fill: #8B5CF6; /* Lowest level of contributions with color */
+  }
+  
+  .react-github-calendar .color-scale-2 {
+    fill: #7C3AED; /* Second level */
+  }
+  
+  .react-github-calendar .color-scale-3 {
+    fill: #6D28D9; /* Third level */
+  }
+  
+  .react-github-calendar .color-scale-4 {
+    fill: #5B21B6; /* Highest level of contributions */
+  }
+  
