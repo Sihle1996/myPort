@@ -40,6 +40,25 @@
    
  
   }
+
+
+
+  /* Light Mode */
+.bg-white {
+  background-color: #ffffff;
+}
+.text-gray-900 {
+  color: #1a202c;
+}
+
+/* Dark Mode */
+.dark .bg-gray-900 {
+  background-color: #82889b;
+}
+.dark .text-white {
+  color: #ffffff;
+}
+
   
   
   

@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
             Download CV
           </a>
         </div>
-        <div className="md:w-1/4">
+        <div className="md:w-1/5">
           <img
             src="/image.png"
             alt="Sihle Mofokeng"
