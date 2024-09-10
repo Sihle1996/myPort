@@ -1,19 +1,19 @@
 # Stage 1: Build the application
 FROM node:alpine3.11 as react
 
-# Create an application directory
+# Set the working directory
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY frontend/package*.json ./
+COPY package*.json ./
 
-# Install node packages
+# Install dependencies
 RUN npm install
 
-# Copy the rest of the application
-COPY frontend/ .
+# Copy the entire project directory into the Docker container
+COPY ./ . 
 
-# Build the app
+# Build the application
 RUN npm run build
 
 # Stage 2: Serve the application using Nginx
