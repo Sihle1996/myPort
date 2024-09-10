@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-
 import { FaAngular, FaBootstrap, FaFigma, FaGit } from "react-icons/fa";
 import { SiSpringboot, SiTailwindcss } from "react-icons/si";
-import './services.css'
+import './services.css';
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-
 
 const technologies = [
   { icon: <FaAngular />, title: 'Angular', description: 'A powerful framework for building web applications.', proficiency: 85 },
@@ -16,10 +14,18 @@ const technologies = [
 ];
 
 const Services: React.FC = () => {
+  const [timestamp, setTimestamp] = useState<string>("");
+
+  useEffect(() => {
+    const currentTimestamp = new Date().toLocaleString();
+    setTimestamp(currentTimestamp); // Set timestamp when component loads
+  }, []);
+
   return (
     <section className="bg-gray-900 py-20">
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold mb-10 text-white">Technologies I Use</h2>
+        <p className="text-gray-400 mb-10">Component loaded at: {timestamp}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {technologies.map((tech, index) => (
             <div key={index} className="bg-black p-6 rounded-lg shadow-lg">
@@ -50,7 +56,7 @@ const AnimatedProgressBar: React.FC<{ proficiency: number }> = ({ proficiency })
     const duration = 2000; // Duration in milliseconds
     const stepTime = 20; // Update interval in milliseconds
 
-    const step = (timestamp: number) => {
+    const step = (_timestamp: number) => {
       start += (end - start) / (duration / stepTime);
       setValue(Math.min(start, end));
       if (start < end) {
