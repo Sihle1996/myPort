@@ -1,0 +1,13 @@
+# Ignore node_modules to avoid copying dependencies
+node_modules
+
+# Ignore build output and other temporary files
+build
+.cache
+.vite
+
+# Ignore version control directories
+.git
+
+# Ignore environment files
+.env
