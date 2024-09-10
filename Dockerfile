@@ -1,29 +1,21 @@
-# Stage 1: Build the application
-FROM node:alpine3.11 AS build
+# We don't want to start from scratch.
+# That is why we tell node here to use the current node image as base.
+FROM node:alpine3.11
 
 # Create an application directory
+RUN mkdir -p /app
+
+# The /app directory should act as the main application directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json (or yarn.lock) and install dependencies
+# Copy the app package and package-lock.json file
 COPY frontend/package*.json ./
+
+# Install node packages
 RUN npm install
 
-# Copy the rest of the application code
+# Copy or project directory (locally) in the current directory of our docker image (/app)
 COPY frontend/ .
 
-# Build the application
+# Build the app
 RUN npm run build
-
-# Stage 2: Serve the application
-FROM nginx:alpine
-
-# Copy the build files from the build stage
-COPY --from=build /app/dist /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
-
-
