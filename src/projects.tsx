@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import './github.css'
-import './projects.css'
+import './github.css';
+import './projects.css';
 import GitHubCalendar from "react-github-calendar";
 
 interface GitHubRepo {
@@ -21,62 +20,59 @@ const projectImages: { [key: string]: string } = {
   'project-six': '/images/image6.jpg',
 };
 
+// Hardcoded projects array
+const hardcodedProjects: GitHubRepo[] = [
+  {
+    id: 1,
+    name: "project-one",
+    description: "Description for project one",
+    html_url: "https://github.com/sihle1996/project-one",
+    homepage: "https://project-one.com",
+  },
+  {
+    id: 2,
+    name: "project-two",
+    description: "Description for project two",
+    html_url: "https://github.com/sihle1996/project-two",
+    homepage: "https://project-two.com",
+  },
+  {
+    id: 3,
+    name: "project-three",
+    description: "Description for project three",
+    html_url: "https://github.com/sihle1996/project-three",
+    homepage: "https://project-three.com",
+  },
+  {
+    id: 4,
+    name: "project-four",
+    description: "Description for project four",
+    html_url: "https://github.com/sihle1996/project-four",
+    homepage: null, // No homepage for this project
+  },
+  {
+    id: 5,
+    name: "project-five",
+    description: "Description for project five",
+    html_url: "https://github.com/sihle1996/project-five",
+    homepage: "https://project-five.com",
+  },
+  {
+    id: 6,
+    name: "project-six",
+    description: "Description for project six",
+    html_url: "https://github.com/sihle1996/project-six",
+    homepage: null,
+  },
+];
+
 const Projects: React.FC = () => {
-  const [repos, setRepos] = useState<GitHubRepo[]>([]);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
-
-    if (!githubToken) {
-      console.error("GitHub token is missing! Please check your .env file.");
-      return;
-    }
-
-    const fetchRepos = async () => {
-      try {
-        const response = await fetch("https://api.github.com/users/sihle1996/repos?sort=created", {
-          headers: {
-            Authorization: `Bearer ${githubToken}`, 
-          },
-        });
-
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status} ${response.statusText}`);
-        }
-
-        const data = await response.json();
-
-        if (Array.isArray(data)) {
-          setRepos(data.slice(0, 6)); // Limit to 6 projects
-        } else {
-          throw new Error("Unexpected data format");
-        }
-      } catch (error: any) {
-        setError(error.message);
-      }
-    };
-
-    fetchRepos();
-  }, []);
-
-  if (error) {
-    return (
-      <section id="projects" className="bg-gray-900 text-white py-20">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-10 text-white">My Projects</h2>
-          <p className="text-red-500">Failed to load projects: {error}</p>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="projects" className="bg-gray-900 text-white py-20">
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold mb-10 text-white">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {repos.map((repo) => (
+          {hardcodedProjects.map((repo) => (
             <div key={repo.id} className="bg-black p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
               <img 
                 src={projectImages[repo.name] || '/image_copy.png'} 
