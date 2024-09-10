@@ -1,5 +1,5 @@
 import React from "react";
-import './Header.css'; // Import custom CSS file for animations
+
 
 
 const Header: React.FC = () => {
