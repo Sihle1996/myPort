@@ -42,10 +42,10 @@ const About: React.FC = () => {
                 <FaGithub className="mr-2 text-purple-500" /> <a href="https://github.com/Sihle1996" target="_blank" rel="noopener noreferrer">github.com/sihle1996</a>
               </li>
               <li className="mb-2 flex items-center">
-                <FaLinkedin className="mr-2 text-purple-500" /> <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a>
+                <FaLinkedin className="mr-2 text-purple-500" /> <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin/</a>
               </li>
               <li className="mb-2 flex items-center">
-                <IoMdMail className="mr-2 text-purple-500" /> <a href="mailto:your-email@example.com">your-email@example.com</a>
+                <IoMdMail className="mr-2 text-purple-500" /> <a href="mailto:your-email@example.com">sihle.mofokeng96@gmail.com</a>
               </li>
             </ul>
           </div>

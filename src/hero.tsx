@@ -1,7 +1,5 @@
-import React from "react";
-import useVisibility from "./useVisibility";
 import { Typewriter } from "react-simple-typewriter";
-
+import useVisibility from "./useVisibility";
 
 const Hero: React.FC = () => {
   const [ref, isVisible] = useVisibility();
@@ -11,19 +9,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         <div ref={ref} className={`md:w-1/2 slide-fade-in ${isVisible ? 'visible' : ''}`}>
           <h1 className="text-5xl font-bold mb-4">
-            <span style={{ color: 'white' }}>
-              Hello, I'm{' '}
-              <span style={{ color: 'purple' }}>
-                <Typewriter
-                  words={['Sihle Mofokeng']}
-                  loop={1} // No looping
-                  typeSpeed={50}
-                  deleteSpeed={0}
-                  cursor
-                  cursorStyle="|"
-                />
-              </span>
-            </span>
+            Hello, I'm <span className="text-purple-500">Sihle Mofokeng</span>
           </h1>
           <p className="text-lg mb-6">
             <Typewriter
@@ -32,7 +18,7 @@ const Hero: React.FC = () => {
                 'An Imaginative Developer.',
                 'A Creative Problem Solver.',
               ]}
-              loop={0} // Infinite looping
+              loop={0}
               typeSpeed={50}
               deleteSpeed={30}
               cursor
@@ -46,7 +32,7 @@ const Hero: React.FC = () => {
             Download CV
           </a>
         </div>
-        <div className="md:w-1/5">
+        <div className="mt-8 md:mt-0 md:w-1/3 lg:w-1/4">
           <img
             src="/image.png"
             alt="Sihle Mofokeng"

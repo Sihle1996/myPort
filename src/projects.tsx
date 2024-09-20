@@ -20,7 +20,7 @@ const projectImages: { [key: string]: string } = {
   'project-six': '/images/image6.jpg',
 };
 
-// Hardcoded projects array
+
 const hardcodedProjects: GitHubRepo[] = [
   {
     id: 1,

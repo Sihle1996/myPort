@@ -1,14 +1,11 @@
-import React from "react";
-
-
-
 const Header: React.FC = () => {
   return (
     <header className="bg-gray-900 p-6">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-xl font-bold text-purple-500">Portfolio</div>
         <nav>
-          <ul className="flex space-x-4">
+          <ul className="hidden md:flex space-x-4">
+            {/* On mobile, this list will be hidden and visible on medium screens */}
             <li className="relative">
               <a href="#home" className="text-white hover:text-purple-500">Home</a>
               <div className="underline-animation"></div>
@@ -31,5 +28,6 @@ const Header: React.FC = () => {
     </header>
   );
 };
+
 
 export default Header;
